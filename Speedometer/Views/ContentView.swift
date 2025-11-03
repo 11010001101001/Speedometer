@@ -27,7 +27,8 @@ private extension ContentView {
             let `default` = Settings(
                 maxSpeed: 55,
                 speedExceededSound: .speed,
-                speedAnimationEnabled: false,
+                isSpeedAnimationEnabled: false,
+                isWeatherShown: false,
                 fuelEconomyMinSpeed: 90,
                 fuelEconomyMaxSpeed: 120,
                 coffeeBreakDelay: 60 * 60 * 2,

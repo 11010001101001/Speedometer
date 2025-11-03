@@ -10,6 +10,8 @@ import SwiftUI
 struct TemperatureView: View {
     @ObservedObject var weatherManager: WeatherManager
 
+    @Bindable var savedSettings: Settings
+
     var body: some View {
         content
     }
@@ -20,8 +22,11 @@ private extension TemperatureView {
     var content: some View {
         HStack(spacing: 8) {
             locationIcon
-            locationName
-            temperature
+
+            if savedSettings.isWeatherShown ?? false {
+                locationName
+                temperature
+            }
         }
         .opacity(0.5)
     }
@@ -33,7 +38,7 @@ private extension TemperatureView {
     @ViewBuilder
     var locationIcon: some View {
         let name = weatherManager.locationName
-        let systemName = name.isEmpty ? "wifi.slash" : "location.fill"
+        let systemName = name.isEmpty ? "antenna.radiowaves.left.and.right.slash" : "antenna.radiowaves.left.and.right"
 
         Image(systemName: systemName)
             .resizable()

@@ -41,7 +41,7 @@ struct MainView: View {
                 .padding(.top, 20)
         }
         .overlay(alignment: .topLeading) {
-            TemperatureView(weatherManager: weatherManager)
+            TemperatureView(weatherManager: weatherManager, savedSettings: savedSettings)
                 .padding([.top, .leading], 20)
         }
         .overlay(alignment: .topTrailing) {
@@ -75,7 +75,8 @@ private extension MainView {
         savedSettings: .init(
             maxSpeed: 60,
             speedExceededSound: .speed,
-            speedAnimationEnabled: false,
+            isSpeedAnimationEnabled: false,
+            isWeatherShown: false,
             fuelEconomyMinSpeed: 90,
             fuelEconomyMaxSpeed: 120,
             coffeeBreakDelay: 10,

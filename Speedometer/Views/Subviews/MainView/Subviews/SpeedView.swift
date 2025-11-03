@@ -21,8 +21,8 @@ struct SpeedView: View {
 private extension SpeedView {
     @ViewBuilder
     var speed: some View {
-        let contentTransition: ContentTransition = savedSettings.speedAnimationEnabled ? .numericText(value: locationManager.speed) : .identity
-        let animation: Animation? = savedSettings.speedAnimationEnabled ? .easeInOut(duration: 0.3) : .none
+        let contentTransition: ContentTransition = savedSettings.isSpeedAnimationEnabled ? .numericText(value: locationManager.speed) : .identity
+        let animation: Animation? = savedSettings.isSpeedAnimationEnabled ? .easeInOut(duration: 0.3) : .none
         let text = locationManager.isNoGps ? "N/A" : String(format: "%.0f", locationManager.speed)
 
         HStack {

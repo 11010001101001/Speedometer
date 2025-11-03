@@ -12,7 +12,8 @@ import SwiftData
 final class Settings {
     var maxSpeed: Double
     var speedExceededSound: Sound
-    var speedAnimationEnabled: Bool
+    var isSpeedAnimationEnabled: Bool
+    var isWeatherShown: Bool
     var fuelEconomyMinSpeed: Double
     var fuelEconomyMaxSpeed: Double
     var coffeeBreakDelay: Double
@@ -21,7 +22,8 @@ final class Settings {
     init(
         maxSpeed: Double,
         speedExceededSound: Sound,
-        speedAnimationEnabled: Bool,
+        isSpeedAnimationEnabled: Bool,
+        isWeatherShown: Bool,
         fuelEconomyMinSpeed: Double,
         fuelEconomyMaxSpeed: Double,
         coffeeBreakDelay: Double,
@@ -29,7 +31,8 @@ final class Settings {
     ) {
         self.maxSpeed = maxSpeed
         self.speedExceededSound = speedExceededSound
-        self.speedAnimationEnabled = speedAnimationEnabled
+        self.isSpeedAnimationEnabled = isSpeedAnimationEnabled
+        self.isWeatherShown = isWeatherShown
         self.fuelEconomyMinSpeed = fuelEconomyMinSpeed
         self.fuelEconomyMaxSpeed = fuelEconomyMaxSpeed
         self.coffeeBreakDelay = coffeeBreakDelay

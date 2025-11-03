@@ -55,11 +55,20 @@ private extension SettingsView {
             }
 
             Section("Анимация изменения скорости:") {
-                Picker("Анимация", selection: $savedSettings.speedAnimationEnabled) {
+                Picker("Анимация", selection: $savedSettings.isSpeedAnimationEnabled) {
                     Text("вкл").tag(true)
                     Text("выкл").tag(false)
                 }
-                .sensoryFeedback(.selection, trigger: savedSettings.speedAnimationEnabled)
+                .sensoryFeedback(.selection, trigger: savedSettings.isSpeedAnimationEnabled)
+                .pickerStyle(.segmented)
+            }
+
+            Section("Отображение погоды:") {
+                Picker("Погода", selection: $savedSettings.isWeatherShown) {
+                    Text("вкл").tag(true)
+                    Text("выкл").tag(false)
+                }
+                .sensoryFeedback(.selection, trigger: savedSettings.isWeatherShown)
                 .pickerStyle(.segmented)
             }
 
